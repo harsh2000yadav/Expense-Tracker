@@ -1,4 +1,6 @@
+import 'package:expenses/transaction.dart';
 import 'package:flutter/material.dart';
+import './transaction.dart';
 
 void main()=>runApp(MyApp());
 
@@ -14,6 +16,10 @@ class MyApp extends StatelessWidget {
 
 
 class MyHomePage extends StatelessWidget {
+  final List<Transaction> transaction =[
+    Transaction(id: 't1', title: 'Mobile Recharge', amount: 450 , date: DateTime.now()),
+    Transaction(id: 't2', title: 'Watch', amount: 4500 , date: DateTime.now()),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
