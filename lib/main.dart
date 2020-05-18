@@ -29,7 +29,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expenses Tracker')
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+       
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
@@ -39,6 +39,30 @@ class MyHomePage extends StatelessWidget {
               child: Text('Chart will go here.'),
               elevation: 7,
             ),
+          ),
+          Card(
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    decoration:  InputDecoration(labelText: 'Title'),
+                  ),
+                   TextField(
+                    decoration:  InputDecoration(labelText: 'Amount'),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(onPressed: (){},
+                    child:Text('Add Transaction'),
+                    color: Colors.deepPurpleAccent,
+                    textColor: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),elevation: 5,
           ),
           Column(
 
