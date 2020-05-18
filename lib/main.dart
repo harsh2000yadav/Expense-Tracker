@@ -27,6 +27,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expenses Tracker')
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
             width: double.infinity,
@@ -40,7 +42,31 @@ class MyHomePage extends StatelessWidget {
 
             children : transaction.map((tx) {
               return Card(
-                child: Text(tx.title),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal:25,
+                        vertical:20
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.purple,
+                          style: BorderStyle.solid,
+                          width: 2
+                        ),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Text(tx.amount.toString())
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Text(tx.title),
+                        Text(tx.amount.toString()),
+                      ],
+                    )
+                  ],
+                )
               );
             } ).toList(),
           ),
