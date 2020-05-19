@@ -2,8 +2,6 @@
 import 'package:expenses/widgets/new_transaction.dart';
 import 'package:expenses/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
-import './models/transaction.dart';
-
 
 void main()=>runApp(MyApp());
 
