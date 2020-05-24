@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Expense Tracker',
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -23,8 +24,12 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-        title: Text('Expenses Tracker')
+        title: Text('Expenses Tracker'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add_circle), onPressed: (){})
+        ],
       ),
       body:  Column(
       
@@ -43,6 +48,11 @@ class MyHomePage extends StatelessWidget {
           ],
         
       ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: null),
     );
   }
 }
