@@ -54,9 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
         return tx.date.isAfter(
           DateTime.now().subtract(
             Duration(days: 7)
-          )
+          ),
         );
-     });
+     }).toList();
    }
 
    void _addNewTransaction(String txTitle, double txAmount){

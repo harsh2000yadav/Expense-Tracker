@@ -21,7 +21,7 @@ List<Map<String, Object>> get groupedTxnVal{
       }
     }
 
-    return {'day': DateFormat.E(weekDay), 'amount' : totalSum};
+    return {'day': DateFormat.E().format(weekDay), 'amount' : totalSum};
   });
 }
 
