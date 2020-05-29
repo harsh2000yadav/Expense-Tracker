@@ -37,15 +37,28 @@ double get totalSpending{
       margin: EdgeInsets.all(20),
       child: Container(
         padding: EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: groupedTxnVal.map((data){
-            return Flexible(
-              fit: FlexFit.tight,
-              child: ChartBar(data['day'], data['amount'], 
-              totalSpending == 0.0 ? 0.0 : (data['amount'] as double) / totalSpending),
-            );
-          }).toList(),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('Your last week\'s spending.', 
+              style: TextStyle(color:Colors.deepPurple, fontWeight: FontWeight.bold),
+              ),
+              
+            ),
+            
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: groupedTxnVal.map((data){
+              return Flexible(
+                fit: FlexFit.tight,
+                child: ChartBar(data['day'], data['amount'], 
+                totalSpending == 0.0 ? 0.0 : (data['amount'] as double) / totalSpending),
+              );
+            }).toList(),
+          ),
+          ],
+                  
         ),
       ),
     );
